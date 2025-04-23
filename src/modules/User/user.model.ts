@@ -26,6 +26,11 @@ const userSchema = new Schema<TUser, User>(
       required: true,
       select: 0,
     },
+    phone: {
+      type: String,
+      required: true,
+    
+    },
     role: {
       type: String,
       enum: ['mealProvider', 'customer'],

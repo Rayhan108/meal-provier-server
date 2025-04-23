@@ -13,7 +13,8 @@ const loginValidationSchema = z.object({
         email: z.string().trim().email("Invalid email address"),
         image: z.string().trim().optional(),
         password: z.string().trim(),
-        role: z.enum(["user", "admin"]).default("user"),
+        phone:z.string(),
+        role: z.enum(["customer", "mealProvider"]).default("customer"),
         createdAt: z.date().default(() => new Date()),
         updatedAt: z.date().default(() => new Date()),
     })

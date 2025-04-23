@@ -7,8 +7,9 @@ export interface TUser {
   name: string;
   email: string;
   image?:string;
-  password: string;
+  password:string;
   passwordChangedAt?: Date;
+  phone: string;
   role: 'customer' | 'mealProvider';
   status: 'in-progress' | 'blocked';
   createdAt: Date;
@@ -20,7 +21,7 @@ export interface IUser extends Document {
   email: string;
   password: string;
   role: 'customer' | 'mealProvider';
-  phone?: string;
+
   address?: string;
   city?: string;
   createdAt: Date;
