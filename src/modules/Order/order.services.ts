@@ -56,13 +56,20 @@ console.log("order=>",userOrders);
     return userOrders;
 }
 
-
+const updateUserProfileFromDB = async(id:string,data:TUser)=>{
+  // console.log(data,id);
+  const result= await UserModel.findByIdAndUpdate(id, data, {
+      new: true,
+      runValidators: true,
+    });
+  return result;
+}
 
 
 
 export const OrderServices = {
   createOrderIntoDB,
-
+updateUserProfileFromDB,
   getAllOrderFromDB,
 
   getSingleOrder

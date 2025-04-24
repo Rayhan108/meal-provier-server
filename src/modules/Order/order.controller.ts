@@ -52,9 +52,28 @@ const getSingleOrders=catchAsync(async(req:Request,res:Response)=>{
       });
 })
 
+//update user profile
+const updateProfile = async(req:Request,res:Response,next:NextFunction)=>{
+  try{
+    const {userId} = req.params;
+    const newData = req.body;
+    const result = await OrderServices.updateUserProfileFromDB(userId,newData);
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Profile Updated succesfully!',
+        data: result,
+      });
+  }catch(err:any){
+next(err)
+ }
+}
+
+
+
 export const OrderController={
     createOrder,
 getAllOrders,
-
+updateProfile,
     getSingleOrders
 }

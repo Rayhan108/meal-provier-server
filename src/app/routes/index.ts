@@ -13,7 +13,7 @@ const moduleRoutes = [
         route: AuthRoutes,
       },
       {
-        path: '/order',
+        path: '/customers',
         route: OrderRoute,
       },
       {

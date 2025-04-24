@@ -19,6 +19,18 @@ const loginValidationSchema = z.object({
         updatedAt: z.date().default(() => new Date()),
     })
 })
+  const updateUserValidationSchema = z.object({
+    body: z.object({
+
+        name: z.string().trim().optional(),
+        email: z.string().trim().email("Invalid email address").optional(),
+        image: z.string().trim().optional(),
+        password: z.string().trim().optional(),
+        phone:z.string().optional(),
+        role: z.enum(["customer", "mealProvider"]).default("customer").optional(),
+        
+    })
+})
 const changePasswordValidationSchema = z.object({
     body: z.object({
       oldPassword: z.string({
@@ -35,4 +47,4 @@ const changePasswordValidationSchema = z.object({
       }),
     }),
   });
-export const AuthValidation = {loginValidationSchema,registerUserValidationSchema,changePasswordValidationSchema,refreshTokenValidationSchema}
+export const AuthValidation = {loginValidationSchema,registerUserValidationSchema,changePasswordValidationSchema,refreshTokenValidationSchema,updateUserValidationSchema}
