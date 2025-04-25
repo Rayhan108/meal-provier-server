@@ -12,7 +12,7 @@ import { IMenu } from "./provider.interface";
 import { ProviderModel } from "./provider.model";
 import { OrderModel } from "../Order/order.model";
 
-//create an order
+//create an order api
 
 const createMenuIntoDB = async (
     provider:IUser,
