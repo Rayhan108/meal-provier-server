@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(cors());
 app.use(morgan("dev"))
 app.get('/', (req: Request, res: Response) => {
-  res.send('Car Store Server is Running...');
+  res.send('Meal Provider Server is Running...');
 });
 app.use('/api/v1', router);
 
