@@ -40,6 +40,16 @@ const getAllOrders=catchAsync(async(req:Request,res:Response)=>{
         data: result,
       });
 })
+//get all menu
+const getAllMunu=catchAsync(async(req:Request,res:Response)=>{
+    const result = await menuServices.getAllMenuFromDB();
+    sendResponse(res, {
+        statusCode: httpStatus.OK,
+        success: true,
+        message: 'Order are retrived succesfully!',
+        data: result,
+      });
+})
 
 
 
@@ -48,5 +58,6 @@ const getAllOrders=catchAsync(async(req:Request,res:Response)=>{
 export const providerController={
 createMenu,
 getAllOrders,
+getAllMunu
 
 }

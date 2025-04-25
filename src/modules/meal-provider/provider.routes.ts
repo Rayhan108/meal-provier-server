@@ -11,5 +11,6 @@ const router = express.Router();
 router.post('/menu',auth(USER_ROLE.mealProvider), providerController.createMenu)
 
 router.get('/orders', auth(USER_ROLE.mealProvider), providerController.getAllOrders);
+router.get('/', providerController.getAllMunu);
 
 export const ProviderRoute = router;

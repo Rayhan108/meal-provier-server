@@ -40,6 +40,11 @@ const getAllOrderFromDB=async()=>{
     const result = await OrderModel.find();
     return result;
 }
+// get all menu
+const getAllMenuFromDB=async()=>{
+    const result = await ProviderModel.find();
+    return result;
+}
 
 
 
@@ -48,5 +53,5 @@ const getAllOrderFromDB=async()=>{
 export const menuServices = {
 createMenuIntoDB,
   getAllOrderFromDB,
-
+getAllMenuFromDB
 };
